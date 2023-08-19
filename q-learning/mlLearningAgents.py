@@ -151,7 +151,6 @@ class QLearnAgent(Agent):
         Returns:
             The reward assigned for the given trajectory
         """
-        "*** YOUR CODE HERE ***"
         # Encourage eating food pellets
         foodReward = (startState.getNumFood() - endState.getNumFood()) * 100
 
@@ -184,7 +183,6 @@ class QLearnAgent(Agent):
         Returns:
             Q(state, action)
         """
-        "*** YOUR CODE HERE ***"
         return self.qValues[(state, action)]
 
     # WARNING: You will be tested on the functionality of this method
@@ -197,7 +195,6 @@ class QLearnAgent(Agent):
         Returns:
             q_value: the maximum estimated Q-value attainable from the state
         """
-        "*** YOUR CODE HERE ***"
         # Get the legal actions for the Pacman in the given state
         legalActions = state.state.getLegalPacmanActions()
         
@@ -228,7 +225,6 @@ class QLearnAgent(Agent):
             nextState: the resulting state
             reward: the reward received on this trajectory
         """
-        "*** YOUR CODE HERE ***"
         # Get the current Q-value for the given state and action
         currentQValue = self.getQValue(state, action)
 
@@ -253,7 +249,6 @@ class QLearnAgent(Agent):
             state: Starting state
             action: Action taken
         """
-        "*** YOUR CODE HERE ***"
         self.visitCounts[(state, action)] += 1
 
     # WARNING: You will be tested on the functionality of this method
@@ -269,7 +264,6 @@ class QLearnAgent(Agent):
         Returns:
             Number of times that the action has been taken in a given state
         """
-        "*** YOUR CODE HERE ***"
         return self.visitCounts[(state, action)]
 
     # WARNING: You will be tested on the functionality of this method
@@ -290,7 +284,6 @@ class QLearnAgent(Agent):
         Returns:
             The exploration value
         """
-        "*** YOUR CODE HERE ***"
         # If the action has been taken less than maxAttempts times, prioritize exploration by returning a high value (infinity)
         if counts < self.maxAttempts:
             return float('inf')
