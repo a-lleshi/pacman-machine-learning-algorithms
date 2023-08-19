@@ -47,7 +47,6 @@ class GameStateFeatures:
             state: A given game state object
         """
 
-        "*** YOUR CODE HERE ***"
         self.state = state
         self.walls = state.getWalls()
         self.food = state.getFood()
